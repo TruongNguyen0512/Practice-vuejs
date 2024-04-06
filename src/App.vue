@@ -1,6 +1,9 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <h1>{{ greeting }}</h1>
+    <p>{{ description }}</p>
+    <HelloWorld msg="Hello World!"/>
+  </div>
 </template>
 
 <script>
@@ -10,6 +13,12 @@ export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  data() {
+    return {
+      greeting: 'Welcome to Vue.js App',
+      description: 'This is a simple Vue.js application.'
+    }
   }
 }
 </script>
