@@ -1,35 +1,37 @@
 <template>
-  <div id="app">
-    <h1>{{ greeting }}</h1>
-    <p>{{ description }}</p>
-    <HelloWorld msg="Hello World!"/>
+  <div>
+     <CityDisplay :city="currentCity" />
+     <SearchBox @search = "handleSearch" />
   </div>
+
 </template>
 
+
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import CityDisplay from './components/CityDisplay.vue';
+import SearchBox from './components/SearchBox.vue';
+
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  },
+  name : 'App' , 
   data() {
     return {
-      greeting: 'Welcome to Vue.js App',
-      description: 'This is a simple Vue.js application.'
+      currentCity : 'Sai Gon'
+    }
+  } , 
+
+  components : {
+    CityDisplay , 
+    SearchBox 
+  } , 
+  methods : {
+    handleSearch(city) {
+      this.currentCity = city
     }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
